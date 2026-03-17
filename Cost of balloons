@@ -1,0 +1,27 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.*;
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while(t-->0)
+        {
+            int greenCost = sc.nextInt();
+            int purpleCost = sc.nextInt();
+            int n = sc.nextInt();
+            int totalGreen=0;
+            int totalPurple=0;
+            for(int i=0;i<n;i++)
+            {
+                int Solvedproblem1 = sc.nextInt();
+                int Solvedproblem2 = sc.nextInt();
+                if(Solvedproblem1==1) totalGreen++;
+                if(Solvedproblem2==1) totalPurple++;
+            }
+            int minCost = Math.min(totalGreen*greenCost+totalPurple*purpleCost,totalGreen*purpleCost+totalPurple*greenCost);
+            System.out.println(minCost);
+        }
+        sc.close();
+    }
+}
