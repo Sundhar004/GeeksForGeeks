@@ -19,7 +19,7 @@ class Solution {
             curr.add(nums[i]);
             permutation(nums,curr,used);
             curr.remove(curr.size()-1);
-            permutation(nums,curr,used);
+            
             used[i] = false;
         }
     }
