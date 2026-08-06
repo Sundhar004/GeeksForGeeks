@@ -1,0 +1,18 @@
+class Solution {
+    static boolean isSubsetSum(int arr[], int sum)
+    {
+        return isSum(0,0,arr,sum);
+    }
+    public static boolean isSum(int ind,int tar,int arr[],int sum)
+    {
+        if(tar == sum)
+        {
+            return true;
+        }
+        if(ind == arr.length || tar > sum)
+        {
+            return false;
+        }
+        return isSum(ind+1,tar+arr[ind],arr,sum) || isSum(ind+1,tar,arr,sum);
+    }
+}
